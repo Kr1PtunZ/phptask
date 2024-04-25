@@ -54,6 +54,7 @@ class  Contacts
             $srcId = $data["source_id"];
             $name=$data["name"];
             $phone=$data["phone"];
+            $phone = substr($phone, 2);
             $email=$data["email"];
             echo $query="INSERT INTO contacts SET source_id = $srcId, 'name' = $name, phone = $phone, email = $email";
             if(mysqli_query($conn, $query))
