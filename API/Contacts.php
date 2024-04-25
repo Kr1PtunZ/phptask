@@ -56,12 +56,13 @@ class  Contacts
             $phone=$data["phone"];
             $phone = substr($phone, 2);
             $email=$data["email"];
-            echo $query="INSERT INTO contacts SET source_id = $srcId, 'name' = $name, phone = $phone, email = $email";
+            $query="INSERT INTO contacts SET `source_id` = '$srcId', `name` = '$name', `phone` = '$phone', email = '$email'";
             if(mysqli_query($conn, $query))
             {
                 $response=array(
                     'status' => 1,
-                    'status_message' =>'Success.'
+                    'status_message' =>'Success.',
+                    'added_posts' => '1'
                 );
             }
             else
